@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return "ADMIN DASHBOARD";
+    return view('admin.dashboard');
 })->name('dashboard');
