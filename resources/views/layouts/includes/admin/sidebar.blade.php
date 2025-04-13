@@ -18,15 +18,55 @@
             'name' => __('Users'),
             'icon' => 'fa-solid fa-users',
             'route' => '',
-            'active' => false
+            'active' => false,
         ],
 
-        // Image
+        // Enterprise (Submenu)
         [
-            'name' => __('Image'),
-            'icon' => 'fa-solid fa-image',
-            'route' => '',
-            'active' => false
+            'name' => __('Enterprise'),
+            'icon' => 'fa-solid fa-building',
+            'active' => false,
+            'submenu' => [
+                [
+                    'name' => __('Information'),
+                    'icon' => 'fa-solid fa-circle-info',
+                    'route' => '',
+                    'active' => false,
+                ],
+                [
+                    'name' => __('About Us'),
+                    'icon' => 'fa-solid fa-address-card',
+                    'route' => '',
+                    'active' => false,
+                ],
+                [
+                    'name' => __('Contact'),
+                    'icon' => 'fa-solid fa-id-card',
+                    'route' => '',
+                    'active' => false,
+                ]
+            ],
+        ],
+
+        // Enterprise (Submenu)
+        [
+            'name' => __('Enterprise 2'),
+            'icon' => 'fa-solid fa-building',
+            'active' => true,
+            'submenu' => [
+                [
+                    'name' => __('Information'),
+                    'icon' => 'fa-solid fa-circle-info',
+                    'route' => '',
+                    'active' => false,
+                ],
+                [
+                    'name' => __('About Us'),
+                    'icon' => 'fa-solid fa-address-card',
+                    'route' => '',
+                    'active' => true,
+                ]
+            ],
         ],
     ];
 @endphp
