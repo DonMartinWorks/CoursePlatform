@@ -1,3 +1,20 @@
 <x-admin-layout>
-    ADMIN Dashboard
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
+    <x-image-description />
 </x-admin-layout>
