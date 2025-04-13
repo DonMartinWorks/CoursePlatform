@@ -17,7 +17,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" class="sm:overflow-auto">
     {{-- SIDEBAR ADMIN Component --}}
     @include('layouts.includes.admin.sidebar')
 
@@ -29,6 +29,10 @@
             {{ $slot }}
         </div>
     </div>
+
+    {{-- Mobile Background (Sidebar open) --}}
+    <div x-cloak x-show="open" x-on:click="open = false"
+        class="bg-stone-900 bg-opacity-50 fixed inset-0 z-30 transition-all sm:hidden"></div>
 
     @stack('modals')
 
