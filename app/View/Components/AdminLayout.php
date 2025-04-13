@@ -16,14 +16,23 @@ class AdminLayout extends Component
     public $title;
 
     /**
+     * The breadcrumb items.
+     *
+     * @var array
+     */
+    public $breadcrumb;
+
+    /**
      * Create a new component instance.
      *
      * @param string $title
+     * @param array $breadcrumb
      */
-    public function __construct($title = null)
+    public function __construct(?string $title = null, array $breadcrumb = [])
     {
         // Assign the title to the component property, using a default if none is provided.
         $this->title = $title ?? __('Page');
+        $this->breadcrumb = $breadcrumb;
     }
 
     /**
@@ -31,6 +40,10 @@ class AdminLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.admin')->with('title', $this->title);
+        return view('layouts.admin')->with([
+            'title', $this->title,
+            'breadcrumb' => $this->breadcrumb,
+
+        ]);
     }
 }
