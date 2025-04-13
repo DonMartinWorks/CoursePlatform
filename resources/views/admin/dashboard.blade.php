@@ -1,4 +1,4 @@
-<x-admin-layout :breadcrumb="[
+<x-admin-layout title="{{ __('Dashboard') }}" :breadcrumb="[
     // Route Dashboard
     [
         'name' => __('Dashboard'),
