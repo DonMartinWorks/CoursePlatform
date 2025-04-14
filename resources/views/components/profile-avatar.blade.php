@@ -32,11 +32,17 @@
                 {{ __('Profile') }}
             </x-dropdown-link>
 
-            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                <x-dropdown-link href="{{ route('api-tokens.index') }}">
-                    {{ __('API Tokens') }}
-                </x-dropdown-link>
-            @endif
+            <div class="border-t border-gray-200"></div>
+
+            <x-dropdown-link href="{{ route('admin.dashboard') }}">
+                {{ __('Admin Dashboard') }}
+            </x-dropdown-link>
+
+            <div class="border-t border-gray-200"></div>
+
+            <x-dropdown-link href="{{ route('instructor.dashboard') }}">
+                {{ __('Instructor Dashboard') }}
+            </x-dropdown-link>
 
             <div class="border-t border-gray-200"></div>
 
@@ -44,11 +50,36 @@
             <form method="POST" action="{{ route('logout') }}" x-data>
                 @csrf
 
-                <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();" class="hover:bg-rose-600 hover:text-white transition-all">
+                <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();"
+                    class="hover:bg-rose-600 hover:text-white transition-all">
                     {{ __('Log Out') }}
                 </x-dropdown-link>
             </form>
         </x-slot>
     </x-dropdown>
 @else
+    <x-dropdown align="right">
+        <x-slot name="trigger">
+            <button class="text-gray-500" title="{{ __('Log In') }}&#160;&#47;&#160;{{ __('Register') }}">
+                <i class="fa-solid fa-door-open text-2xl hover:text-purple-500 transition-all"></i>
+            </button>
+        </x-slot>
+
+        <x-slot name="content">
+            <!-- Log In -->
+            <div class="block px-4 py-2 text-xs text-gray-400">
+                {{ __('Log In') }}&#160;&#47;&#160;{{ __('Register') }}
+            </div>
+
+            <x-dropdown-link href="{{ route('login') }}">
+                {{ __('Log In') }}
+            </x-dropdown-link>
+
+            <div class="border-t border-gray-200"></div>
+
+            <x-dropdown-link href="{{ route('register') }}">
+                {{ __('Register') }}
+            </x-dropdown-link>
+        </x-slot>
+    </x-dropdown>
 @endauth
