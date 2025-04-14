@@ -36,7 +36,7 @@
                 [
                     'name' => __('About Us'),
                     'icon' => 'fa-solid fa-address-card',
-                    'route' => '',
+                    'route' => 'https://github.com/DonMartinWorks',
                     'active' => false,
                 ],
                 [
@@ -44,27 +44,6 @@
                     'icon' => 'fa-solid fa-id-card',
                     'route' => '',
                     'active' => false,
-                ]
-            ],
-        ],
-
-        // Enterprise (Submenu)
-        [
-            'name' => __('Enterprise 2'),
-            'icon' => 'fa-solid fa-building',
-            'active' => true,
-            'submenu' => [
-                [
-                    'name' => __('Information'),
-                    'icon' => 'fa-solid fa-circle-info',
-                    'route' => '',
-                    'active' => false,
-                ],
-                [
-                    'name' => __('About Us'),
-                    'icon' => 'fa-solid fa-address-card',
-                    'route' => '',
-                    'active' => true,
                 ]
             ],
         ],
