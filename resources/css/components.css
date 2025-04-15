@@ -3,7 +3,7 @@
     @apply font-medium capitalize rounded-lg text-sm px-2 py-1.5 focus:ring-4 focus:outline-none text-center me-2 mb-2 transition-all cursor-pointer;
 }
 
-.card {
+.card-element {
     @apply bg-white shadow-md rounded-lg p-6;
 }
 

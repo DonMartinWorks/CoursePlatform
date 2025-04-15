@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Instructor\Sections;
 
-use App\Http\Controllers\Controller;
+use App\Models\Level;
+use App\Models\Price;
 use App\Models\Course;
-use Illuminate\Http\Request;
+use App\Models\Category;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CourseController extends Controller
 {
@@ -20,9 +23,13 @@ class CourseController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        $categories = Category::all();
+        $levels = Level::all();
+        $prices = Price::all();
+
+        return view('instructor.sections.courses.create', compact('categories', 'levels', 'prices'));
     }
 
     /**
@@ -30,7 +37,21 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => ['required'],
+            'slug' => ['required', 'unique:courses,slug'],
+            'category_id' => ['required', 'exists:categories,id'],
+            'level_id' => ['required', 'exists:levels,id'],
+            'price_id' => ['required', 'exists:prices,id'],
+        ]);
+
+        // Owner added
+        $data['user_id'] = auth()->user()->id;
+
+        // Create after check the validation of the data.
+        $course = Course::create($data);
+
+        return redirect()->route('instructor.courses.edit', $course);
     }
 
     /**
