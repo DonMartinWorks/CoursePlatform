@@ -19,13 +19,15 @@
                 <div class="mb-4">
                     <x-label for="title" class="mb-1">{{ __('Title') }}</x-label>
                     <x-input placeholder="{{ __('Learn web development') }}" class="w-full" id="title"
-                        name="title" value="{{ old('title') }}" required></x-input>
+                        name="title" value="{{ old('title') }}" required
+                        oninput="string_to_slug(this.value, '#slug')"></x-input>
                 </div>
 
                 {{-- Slug --}}
                 <div class="mb-4">
                     <x-label for="slug" class="mb-1">{{ __('Slug') }}</x-label>
-                    <x-input class="w-full" id="slug" name="slug" value="{{ old('slug') }}" required></x-input>
+                    <x-input class="w-full" id="slug" name="slug" value="{{ old('slug') }}" readonly
+                        required></x-input>
                 </div>
 
                 <div class="grid grid-cols-3 gap-4 mb-4">
