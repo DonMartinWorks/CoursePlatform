@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Instructor\Sections\CourseController as Course;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::redirect('/', '/instructor/courses')->name('home');
 Route::get('/', function () {
-    return view('instructor.dashboard');
-})->name('dashboard');
+    return redirect()->route('instructor.courses.index');
+})->name('home');
+
+/** ----- Course Section ----- */
+Route::resource('/courses', Course::class);

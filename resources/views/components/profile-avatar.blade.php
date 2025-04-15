@@ -40,7 +40,7 @@
 
             <div class="border-t border-gray-200"></div>
 
-            <x-dropdown-link href="{{ route('instructor.dashboard') }}">
+            <x-dropdown-link href="{{ route('instructor.home') }}">
                 {{ __('Instructor Dashboard') }}
             </x-dropdown-link>
 
