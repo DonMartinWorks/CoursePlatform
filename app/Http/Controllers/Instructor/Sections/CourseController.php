@@ -17,7 +17,8 @@ class CourseController extends Controller
      */
     public function index(): View
     {
-        return view('instructor.sections.courses.index');
+        $courses = Course::where('user_id', auth()->user()->id)->get();
+        return view('instructor.sections.courses.index', compact('courses'));
     }
 
     /**
