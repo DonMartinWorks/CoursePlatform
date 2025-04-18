@@ -20,6 +20,6 @@
 @endphp
 
 <div
-    {{ $attributes->merge(['class' => $maxWidth . ' ' . ' mx-auto lg:py-3 sm:py-5 px-4 sm:px-6 lg:px-8']) }}>
+    {{ $attributes->merge(['class' => $maxWidth . ' ' . 'my-4 mx-auto lg:py-3 sm:py-5 px-4 sm:px-6 lg:px-8']) }}>
     {{ $slot }}
 </div>
